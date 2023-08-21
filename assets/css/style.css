@@ -15,9 +15,13 @@
 
 body {
     background-image: url(../images/3193458.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
     height: 100vh;
     width: 100vw;
     text-align: center;
+
 }
 
 header {
@@ -63,9 +67,10 @@ label {
     color: #002F5C;
     font-size: 2rem;
     font-weight: bolder;
+    list-style: none;
 
     border-radius: 30px;
-    background-color: rgb(147, 144, 144)e;
+    background-color: rgb(215, 207, 207);
     display: block;
     margin: 5% auto;
 }
@@ -78,10 +83,10 @@ label {
 
 #question-container {
     width: 100vw;
-    height: 40%;
+    height: 30%;
 
-    font-size: 5rem;
-    padding: 7%;
+    font-size: 4rem;
+    padding-top: 5%;
     letter-spacing: 2px;
 }
 
@@ -89,14 +94,27 @@ label {
     width: 100vw;
     height: 40%;
 
-    font-size: 2rem;
-    display: flex;
-    justify-content: space-evenly;
 }
 
-#options-container p {
+.answer-button {
     height: 50%;
-    width: 50%;
+    width: 45vw;
+
+    background-color: rgb(215, 207, 207);
+    color: rgb(3, 3, 178);
+    font-size: 3rem;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.answer-button:hover:not([disabled]) {
+
+    border: 4px solid rgb(3, 3, 178);
+    cursor: pointer;
+}
+
+.answer-button :disabled {
+    cursor: no-drop;
 }
 
 #next-btn {
@@ -109,12 +127,23 @@ label {
     text-align: center;
 
     border-radius: 30px;
+    margin-top: 8%;
+    background-color: rgb(215, 207, 207);
 
-    background-color: white;
+    display: none;
 }
 
 #next-btn:hover {
 
     border: 4px solid rgb(3, 3, 178);
     cursor: pointer;
+}
+
+.correct {
+    background-color: rgb(147, 235, 147);
+}
+
+.incorrect {
+    background-color: rgb(248, 110, 110);
+
 }

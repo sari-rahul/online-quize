@@ -1,0 +1,230 @@
+/*The array of question and answers are created here */
+let questions = [
+    {
+        question: "Inside which HTML element do we put the JavaScript ?",
+        answers: [
+            { text: "<js>", correct: false },
+            { text: "<scripting>", correct: false },
+            { text: "<script>", correct: true },
+            { text: "<javascript>", correct: false },
+        ]
+    },
+
+    {
+        question: 'Where is the correct place to insert javascript?',
+        answers: [
+            { text: "The <head> section", correct: false },
+            { text: "The <body> section", correct: false },
+            { text: "Both the <head> and <body> sections", correct: true },
+            { text: "None of the above", correct: false },
+        ]
+
+    },
+    {
+        question: 'How do you write "Hello World" in an alert box?',
+        answers: [
+            { text: "alert('Hello World!');", correct: true },
+            { text: "alertBox('Hello World!');", correct: false },
+            { text: "msg('Hello World!');", correct: false },
+            { text: "msgBox('Hello World!');", correct: false },
+        ]
+
+    },
+    {
+        question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
+        answers: [
+            { text: "<script name='xxx.js>'", correct: false },
+            { text: "<script src ='xxx.js>'", correct: true },
+            { text: "<script href ='xxx.js>'", correct: false },
+            { text: "None of the above", correct: false },
+        ]
+    },
+    {
+        question: 'How to create a javascript function?',
+        answers: [
+            { text: "function = myFunction;", correct: false },
+            { text: "function myFunction();", correct: true },
+            { text: "function:myFunction;", correct: false },
+            { text: "myfunction();", correct: false },
+
+        ]
+    },
+    {
+        question: 'How do you call a function named myFunction?',
+        answers: [
+            { text: "myFunction();", correct: true },
+            { text: "call myFunction ()", correct: false },
+            { text: "call myFunction", correct: false },
+            { text: "callfunc myFunction", correct: false },
+        ]
+    },
+    {
+        question: 'How to write a comment in javascript?',
+        answers: [
+            { text: '"This is comment', correct: false },
+            { text: '//This is a comment', corect: false },
+            { text: '/*This is a comment*/', correct: true },
+            { text: '$This is a comment', correct: false },
+        ]
+    },
+    {
+        question: 'How to write an array in javascript?',
+        answers: [
+            { text: 'var colors = red ,blue ,green', correct: false },
+            { text: 'var colors = 1=red , 2=blue , 3=green', corect: false },
+            { text: 'var colors = ["red" , "blue" , "green"]', correct: true },
+            { text: 'var colors = 1:red , 2:blue , 3:green', correct: false },
+        ]
+    },
+    {
+        question: 'How to generate a random number in javascript?',
+        answers: [
+            { text: 'math.random ();', correct: false },
+            { text: 'Math.rnd ()', corect: false },
+            { text: 'Math.random ();', correct: true },
+            { text: 'random();', correct: false },
+        ]
+    },
+    {
+        question: 'Which event occurs when a user clicks on an HTML element?',
+        answers: [
+            { text: 'onchange', correct: false },
+            { text: 'onmousehover', corect: false },
+            { text: 'onmouseclick', correct: false },
+            { text: 'onclick', correct: true },
+        ]
+    }
+
+];
+/*The question container,options container and next button are taken from DOM 
+the next button is not displayed*/
+const question = document.getElementById("question-container");
+const optionsContainer = document.getElementById("options-container");
+const nextButton = document.getElementById("next-btn");
+nextButton.style.display = "none";
+
+/*The question number and score is set to zero. */
+let currentQuestionNumber = 0;
+let score = 0;
+
+/**This function is called when the user wants to continue playing the game after finishing the first chance.
+ * It sets the question number and score back to zero.
+ */
+function startQuiz() {
+    currentQuestionNumber = 0;
+    score = 0;
+    nextButton.innerHTML = "Next Question";
+    displayQuestion();
+}
+
+displayQuestion();
+/** this function displays the questions according to the question number from the array provided 
+ * It also displays the option buttons with the text key as its text content from the answer object of the questions array
+*/
+function displayQuestion() {
+
+    resetStatus();
+
+    let currentQuestion = questions[currentQuestionNumber];
+    let questionNumber = currentQuestionNumber + 1;
+    question.textContent = questionNumber + '. ' + currentQuestion.question;
+    console.log(currentQuestion);
+
+    /** for each answers object of the current question a function answer is placed so that a button 
+     * is created and the text key is passed as the text content of the button.
+     * answer-button class is assigned to each button and designed in css.
+     * Then it is appended into the options container in the DOM.
+     * 
+     * correct key is checked in each answer object and its content is assigned as a dataset to the button.
+     * eventlistener is attached to each button and on click it calls a function checkAnswer. 
+    */
+    currentQuestion.answers.forEach(answer => {
+
+        const button = document.createElement("button");
+        button.textContent = answer.text;
+        button.classList.add("answer-button");
+        optionsContainer.appendChild(button);
+
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+
+        button.addEventListener("click", checkAnswer);
+    });
+
+}
+/** This functions removes all the option buttons from the previous questions
+ * avoids repeatition of buttons
+ */
+function resetStatus() {
+
+    while (optionsContainer.firstChild) {
+        optionsContainer.removeChild(optionsContainer.firstChild);
+    }
+}
+
+/**This function passes the clicked button as a parameter which is the passed into variable.
+ * the dataset of the clicked button is checked
+ * if it is true it is assigned a class correct and a class incorrect if it is not true. 
+ * the score is incremented accordingly when the answer is correct.
+ */
+function checkAnswer(e) {
+    const selectedButton = e.target;
+    console.log(selectedButton);
+    const correctAnswer = selectedButton.dataset.correct === "true";
+    if (correctAnswer) {
+        selectedButton.classList.add("correct");
+        score++;
+    }
+    else {
+        selectedButton.classList.add("incorrect");
+    }
+    /**A copy of array of buttons is created from the options container from the DOM
+     * for each button a function is assigned which checks the dataset of the button
+     * if true it is assigned to the class correct.
+     * class correct changes the background of that button to green.
+     * the buttons are disabled to avoid multiple clicks
+     * the next question button appears 
+     */
+    Array.from(optionsContainer.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextButton.style.display = "inline-block";
+
+}
+/** it resets all the buttons and displays the score and asks if th euser wants to play again */
+function displayScore() {
+    resetStatus();
+    question.textContent = `You Scored ${score} out of ${questions.length} !!!!`;
+    nextButton.style.display = "inline-block";
+    nextButton.textContent = "Play Again";
+}
+
+/**it increases the question number and displays the next question
+ * if there are no more questions left it displays score 
+ */
+function handleNextButton() {
+    currentQuestionNumber++;
+    if (currentQuestionNumber < questions.length) {
+        displayQuestion();
+    } else {
+        displayScore();
+    }
+}
+/**an click event listener is attached to next button which calls handlenextbutton() 
+ * if the array has questions left else it begins the quiz again.
+ */
+nextButton.addEventListener("click", function () {
+    if (currentQuestionNumber < questions.length) {
+        handleNextButton();
+    }
+    else {
+        startQuiz();
+    }
+
+});
+
+
