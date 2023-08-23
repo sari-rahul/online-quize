@@ -195,12 +195,25 @@ function checkAnswer(e) {
     nextButton.style.display = "inline-block";
 
 }
-/** it resets all the buttons and displays the score and asks if th euser wants to play again */
+/** it resets all the buttons and displays the score and asks if th euser wants to play again
+ */
 function displayScore() {
     resetStatus();
     question.textContent = `You Scored ${score} out of ${questions.length} !!!!`;
     nextButton.style.display = "inline-block";
     nextButton.textContent = "Play Again";
+
+    const feedback = document.createElement("textarea");
+    feedback.placeholder = "Your Feedback Here !!!";
+    feedback.classList.add("feedback");
+    optionsContainer.appendChild(feedback);
+
+    const submitFeedback = document.createElement("button");
+    submitFeedback.textContent = "Submit";
+    submitFeedback.classList.add("submitFeedback");
+
+    optionsContainer.appendChild(submitFeedback);
+    optionsContainer.style.display = "block";
 }
 
 /**it increases the question number and displays the next question
