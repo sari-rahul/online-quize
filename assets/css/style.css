@@ -120,6 +120,13 @@ label {
     cursor: no-drop;
 }
 
+#buttons {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #next-btn {
     width: 20%;
     height: 60px;
@@ -130,13 +137,34 @@ label {
     text-align: center;
 
     border-radius: 30px;
-    margin-top: 8%;
+    margin-top: 4%;
     background-color: rgb(215, 207, 207);
 
-    display: none;
 }
 
 #next-btn:hover {
+
+    border: 4px solid rgb(3, 3, 178);
+    cursor: pointer;
+}
+
+#back-btn {
+    width: 20%;
+    height: 60px;
+
+    color: rgb(3, 3, 178);
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 1%;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 4%;
+    background-color: rgb(215, 207, 207);
+
+}
+
+#back-btn:hover {
 
     border: 4px solid rgb(3, 3, 178);
     cursor: pointer;
@@ -237,24 +265,34 @@ label {
     }
 
     #next-btn {
-        width: 50%;
+        width: 25%;
         height: 35px;
         margin-top: 15%;
 
         font-size: 1.5rem;
     }
 
-    .feedback {
-        height: 75%;
-        width: 70%;
-        font-size: 1.5rem;
-        padding: 5%;
-    }
+    #back-btn {
 
-    .submitFeedback {
-        width: 30%;
+        width: 25%;
+        height: 35px;
+        margin-top: 15%;
+
+        font-size: 1.5rem;
     }
 }
+
+.feedback {
+    height: 75%;
+    width: 70%;
+    font-size: 1.5rem;
+    padding: 5%;
+}
+
+.submitFeedback {
+    width: 30%;
+}
+
 
 @media (min-width:800px) {
     header {
@@ -377,6 +415,21 @@ label {
         height: 60px;
         margin-top: 4%;
         font-size: 2rem;
+
+    }
+
+    #back-btn {
+        width: 20%;
+        height: 60px;
+
+        color: rgb(3, 3, 178);
+        font-size: 2rem;
+        font-weight: bolder;
+        text-align: center;
+
+        border-radius: 30px;
+        margin-top: 4%;
+        background-color: rgb(215, 207, 207);
 
     }
 

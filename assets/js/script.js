@@ -101,7 +101,7 @@ the next button is not displayed*/
 const question = document.getElementById("question-container");
 const optionsContainer = document.getElementById("options-container");
 const nextButton = document.getElementById("next-btn");
-nextButton.style.display = "none";
+
 
 /*The question number and score is set to zero. */
 let currentQuestionNumber = 0;
@@ -127,7 +127,7 @@ function displayQuestion() {
 
     let currentQuestion = questions[currentQuestionNumber];
     let questionNumber = currentQuestionNumber + 1;
-    question.textContent = questionNumber + '. ' + currentQuestion.question;
+    question.textContent = questionNumber + '/' + questions.length + ". " + currentQuestion.question;
     console.log(currentQuestion);
 
     /** for each answers object of the current question a function answer is placed so that a button 
