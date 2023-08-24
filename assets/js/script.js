@@ -103,9 +103,11 @@ const optionsContainer = document.getElementById("options-container");
 const nextButton = document.getElementById("next-btn");
 
 
+
 /*The question number and score is set to zero. */
 let currentQuestionNumber = 0;
 let score = 0;
+
 
 /**This function is called when the user wants to continue playing the game after finishing the first chance.
  * It sets the question number and score back to zero.
@@ -161,6 +163,7 @@ function resetStatus() {
     while (optionsContainer.firstChild) {
         optionsContainer.removeChild(optionsContainer.firstChild);
     }
+
 }
 
 /**This function passes the clicked button as a parameter which is the passed into variable.
@@ -192,6 +195,7 @@ function checkAnswer(e) {
         }
         button.disabled = true;
     });
+
     nextButton.style.display = "inline-block";
 
 }
@@ -222,6 +226,7 @@ function displayScore() {
 function handleNextButton() {
     currentQuestionNumber++;
     if (currentQuestionNumber < questions.length) {
+        progressBar();
         displayQuestion();
     } else {
         displayScore();
@@ -231,7 +236,7 @@ function handleNextButton() {
  * if the array has questions left else it begins the quiz again.
  */
 nextButton.addEventListener("click", function () {
-    if (currentQuestionNumber < questions.length) {
+    if (currentQuestionNumber <= questions.length) {
         handleNextButton();
     }
     else {
@@ -239,5 +244,14 @@ nextButton.addEventListener("click", function () {
     }
 
 });
+function progressBar() {
+    const progressBar = document.getElementById("progressDone");
+    let finalValue = questions.length;
+    let progress = currentQuestionNumber;
+    progressBar.style.width = `${((progress / finalValue) * 100)}%`;
+    console.log(finalValue);
+    console.log(progress);
+    console.log(progressBar);
+}
 
 
