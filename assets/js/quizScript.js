@@ -124,7 +124,7 @@ function startQuiz() {
 
     currentQuestionNumber = 0;
     score = 0;
-    nextButton.innerHTML = "Next Question";
+    nextButton.innerHTML = "Next";
     displayQuestion();
 }
 
