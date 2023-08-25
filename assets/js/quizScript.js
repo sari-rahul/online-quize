@@ -1,3 +1,4 @@
+
 /*The array of question and answers are created here */
 let questions = [
     {
@@ -96,6 +97,8 @@ let questions = [
     }
 
 ];
+
+
 /*The question container,options container and next button are taken from DOM 
 the next button is not displayed*/
 const question = document.getElementById("question-container");
@@ -130,14 +133,15 @@ displayQuestion();
  * It also displays the option buttons with the text key as its text content from the answer object of the questions array
 */
 function displayQuestion() {
-
     resetStatus();
+    console.log("inside display question");
+
 
     let currentQuestion = questions[currentQuestionNumber];
     let questionNumber = currentQuestionNumber + 1;
     qNo.innerHTML = questionNumber;
     question.textContent = qNo.innerHTML + '/' + questions.length + ". " + currentQuestion.question;
-    console.log(qNo);
+
 
     /** for each answers object of the current question a function answer is placed so that a button 
      * is created and the text key is passed as the text content of the button.
@@ -213,7 +217,7 @@ function displayScore() {
     document.getElementById("progressDone").innerHTML = "100%";
     question.textContent = `You Scored ${score} out of ${questions.length} !!!!`;
     nextButton.style.display = "inline-block";
-    nextButton.textContent = "Play Again";
+    nextButton.textContent = "Start Again";
 
     const feedback = document.createElement("textarea");
     feedback.placeholder = "Your Feedback Here !!!";
