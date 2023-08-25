@@ -140,7 +140,7 @@ function displayQuestion() {
     let currentQuestion = questions[currentQuestionNumber];
     let questionNumber = currentQuestionNumber + 1;
     qNo.innerHTML = questionNumber;
-    question.textContent = qNo.innerHTML + '/' + questions.length + ". " + currentQuestion.question;
+    question.textContent = qNo.innerHTML + ". " + currentQuestion.question;
 
 
     /** for each answers object of the current question a function answer is placed so that a button 
