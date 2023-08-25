@@ -20,13 +20,22 @@
       <div id="intro">
         <h3>Check your knowledge ???</h3>
       </div>
-      <!--the input box for name and its label-->
-
-      <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Please enter your name" />
-
+      <!--the form for name and email address and its labels-->
+      <div id="form-container">
+        <form action="">
+          <label for="name">Name :</label>
+          <input type="text" id="name" placeholder="Enter Your Name" required />
+          <br />
+          <label for="email">Email :</label>
+          <input type="email" id="email" placeholder=" Your Email" required />
+          <br />
+          <input type="submit" value="Submit" id="submit-btn" />
+        </form>
+      </div>
       <!--the next button-->
-      <a href="quiz-page.html"><button id="start-btn">LET'S START</button></a>
+      <a href="quiz-page.html">
+        <button id="start-btn">LET'S START</button>
+      </a>
     </main>
     <script src="assets/js/script.js"></script>
   </body>

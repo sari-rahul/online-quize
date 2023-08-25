@@ -99,6 +99,7 @@ let questions = [
 /*The question container,options container and next button are taken from DOM 
 the next button is not displayed*/
 const question = document.getElementById("question-container");
+const qNo = document.getElementsByTagName("span");
 const optionsContainer = document.getElementById("options-container");
 const nextButton = document.getElementById("next-btn");
 
@@ -106,6 +107,7 @@ const nextButton = document.getElementById("next-btn");
 
 /*The question number and score is set to zero. */
 let currentQuestionNumber = 0;
+let questionNumber = currentQuestionNumber + 1;
 let score = 0;
 
 
@@ -113,6 +115,10 @@ let score = 0;
  * It sets the question number and score back to zero.
  */
 function startQuiz() {
+    document.getElementById("progressDone").style.width = "0%";
+    document.getElementById("progressDone").innerHTML = "0%";
+
+
     currentQuestionNumber = 0;
     score = 0;
     nextButton.innerHTML = "Next Question";
@@ -129,8 +135,9 @@ function displayQuestion() {
 
     let currentQuestion = questions[currentQuestionNumber];
     let questionNumber = currentQuestionNumber + 1;
-    question.textContent = questionNumber + '/' + questions.length + ". " + currentQuestion.question;
-    console.log(currentQuestion);
+    qNo.innerHTML = questionNumber;
+    question.textContent = qNo.innerHTML + '/' + questions.length + ". " + currentQuestion.question;
+    console.log(qNo);
 
     /** for each answers object of the current question a function answer is placed so that a button 
      * is created and the text key is passed as the text content of the button.
@@ -163,7 +170,6 @@ function resetStatus() {
     while (optionsContainer.firstChild) {
         optionsContainer.removeChild(optionsContainer.firstChild);
     }
-
 }
 
 /**This function passes the clicked button as a parameter which is the passed into variable.
@@ -203,6 +209,8 @@ function checkAnswer(e) {
  */
 function displayScore() {
     resetStatus();
+    document.getElementById("progressDone").style.width = "100%";
+    document.getElementById("progressDone").innerHTML = "100%";
     question.textContent = `You Scored ${score} out of ${questions.length} !!!!`;
     nextButton.style.display = "inline-block";
     nextButton.textContent = "Play Again";
@@ -230,13 +238,14 @@ function handleNextButton() {
         displayQuestion();
     } else {
         displayScore();
+        document.getElementById("progressDone").style.width = "100%";
     }
 }
 /**an click event listener is attached to next button which calls handlenextbutton() 
  * if the array has questions left else it begins the quiz again.
  */
 nextButton.addEventListener("click", function () {
-    if (currentQuestionNumber <= questions.length) {
+    if (currentQuestionNumber < questions.length) {
         handleNextButton();
     }
     else {
@@ -246,12 +255,14 @@ nextButton.addEventListener("click", function () {
 });
 function progressBar() {
     const progressBar = document.getElementById("progressDone");
+
+    let progress = qNo.innerHTML;
     let finalValue = questions.length;
-    let progress = currentQuestionNumber;
+
     progressBar.style.width = `${((progress / finalValue) * 100)}%`;
-    console.log(finalValue);
-    console.log(progress);
-    console.log(progressBar);
+    progressBar.innerHTML = `${((progress / finalValue) * 100)}%`;
+
+    console.log(finalValue + " finalvalue");
+    console.log(progress + " question number");
+    console.log(progressBar.style.width + "width of proges bar");
 }
-
-
