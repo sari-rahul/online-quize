@@ -251,7 +251,7 @@ label {
 @media (min-width:320px) {
     header {
         width: 100%;
-        font-size: 3rem;
+        font-size: 2.5rem;
         padding: 0px;
         padding-top: 10%;
     }
