@@ -105,7 +105,7 @@ label {
 
 #progressBar {
     width: 90%;
-    height: 10px;
+    height: 7px;
     background-color: rgb(197, 194, 194);
     border-radius: 10px;
 }
@@ -214,8 +214,57 @@ label {
 
 .incorrect {
     background-color: rgb(247, 60, 60);
+    animation: blink-animation .1s;
 
 }
+
+@keyframes blink-animation {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
 
 .feedback {
     height: 75%;
@@ -263,7 +312,7 @@ label {
     }
 
     #start-btn {
-        width: 60%;
+        width: 25%;
         height: 35px;
         font-size: 1.5rem;
         margin-top: 25%;

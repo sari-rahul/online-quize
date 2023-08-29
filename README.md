@@ -92,7 +92,7 @@ Once the user completes the quiz the score page is displayed. The features of Sc
 + The Score bar
 + The Feedback area
 + StartAgain button
-+ Login Button
++ Exit Button
 
 ![Score Page](assets/images/scorepage.png)
   
@@ -119,9 +119,10 @@ The Start again button can be clicked if the user wants to play once again.
 If this button is clicked the questions will be displayed from the beginning and the user can play once again.
 ![start again button](assets/images/startagainbutton.png)
 
-#### Login button
+#### Exit button
 ---
-If the game is to be continued by another user they can click the login button and go the login page page their details and start the game.
+If the game is to be continued by another user they can click the exit button and go the login page page add their details and start the game again or they can just exit the game.
+![Exit button](assets/images/exitbutton.png)
  
 ## TESTING
 
@@ -200,7 +201,8 @@ No errors have been found while passing through official Jshint validator.
 Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
 |Start Again Button|When clicked should display the questions as well as the coressponding answer buttons again.|Clicked the next button.|The next question and the respective answer button displayed.|Pass|
 
-
+## BUGS
+---
 
 
 ## DEPLOYMENT

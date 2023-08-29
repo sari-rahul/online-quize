@@ -63,7 +63,7 @@ let questions = [
         question: 'How to write a comment in javascript?',
         answers: [
             { text: '"This is comment', correct: false },
-            { text: '//This is a comment', corect: false },
+            { text: '//This is a comment', correct: false },
             { text: '/*This is a comment*/', correct: true },
             { text: '$This is a comment', correct: false },
         ]
@@ -72,7 +72,7 @@ let questions = [
         question: 'How to write an array in javascript?',
         answers: [
             { text: 'var colors = red ,blue ,green', correct: false },
-            { text: 'var colors = 1=red , 2=blue , 3=green', corect: false },
+            { text: 'var colors = 1=red , 2=blue , 3=green', correct: false },
             { text: 'var colors = ["red" , "blue" , "green"]', correct: true },
             { text: 'var colors = 1:red , 2:blue , 3:green', correct: false },
         ]
@@ -81,7 +81,7 @@ let questions = [
         question: 'How to generate a random number in javascript?',
         answers: [
             { text: 'math.random ();', correct: false },
-            { text: 'Math.rnd ()', corect: false },
+            { text: 'Math.rnd ()', correct: false },
             { text: 'Math.random ();', correct: true },
             { text: 'random();', correct: false },
         ]
@@ -90,7 +90,7 @@ let questions = [
         question: 'Which event occurs when a user clicks on an HTML element?',
         answers: [
             { text: 'onchange', correct: false },
-            { text: 'onmousehover', corect: false },
+            { text: 'onmousehover', correct: false },
             { text: 'onmouseclick', correct: false },
             { text: 'onclick', correct: true },
         ]
@@ -99,7 +99,7 @@ let questions = [
         question: 'console.log(typeof NaN); will result in..',
         answers: [
             { text: 'number', correct: true },
-            { text: 'NaN', corect: false },
+            { text: 'NaN', correct: false },
             { text: 'undefined', correct: false },
             { text: 'null', correct: false },
         ]
@@ -108,7 +108,7 @@ let questions = [
         question: 'console.log(typeof typeof 1); will result in..',
         answers: [
             { text: 'number', correct: false },
-            { text: 'string', corect: true },
+            { text: 'string', correct: true },
             { text: '1', correct: false },
             { text: 'true', correct: false },
         ]
@@ -117,16 +117,16 @@ let questions = [
         question: 'console.log(false == "0"); will result in..',
         answers: [
             { text: 'false', correct: false },
-            { text: 'true', corect: true },
+            { text: 'true', correct: true },
             { text: 'Nan', correct: false },
             { text: 'none of the above', correct: false },
         ]
     },
     {
-        question: "console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());); will result in..",
+        question: "console.log(('b' + 'a' + + 'a').toLowerCase());); will result in..",
         answers: [
             { text: 'baaa', correct: false },
-            { text: 'banana', corect: true },
+            { text: 'banana', correct: true },
             { text: 'Banana', correct: false },
             { text: 'Baaa', correct: false },
         ]
@@ -135,7 +135,7 @@ let questions = [
         question: "console.log(3 > 2 > 1); will result in..",
         answers: [
             { text: 'true', correct: false },
-            { text: 'NaN', corect: false },
+            { text: 'NaN', correct: false },
             { text: 'false', correct: true },
             { text: 'None of above', correct: false },
         ]
@@ -144,7 +144,7 @@ let questions = [
         question: "console.log(1+'2'+'2'); will result in..",
         answers: [
             { text: '24', correct: false },
-            { text: '32', corect: false },
+            { text: '32', correct: false },
             { text: '14', correct: false },
             { text: '122', correct: true },
         ]
@@ -153,16 +153,16 @@ let questions = [
         question: "How does the while loop begins ?",
         answers: [
             { text: 'while(i<10)', correct: true },
-            { text: 'while i<10', corect: false },
+            { text: 'while i<10', correct: false },
             { text: 'while {i<10}', correct: false },
-            { text: 'all of the above', correct: true },
+            { text: 'all of the above', correct: false },
         ]
     },
     {
         question: "Two arrays can be merged using which method ?",
         answers: [
             { text: 'cancate()', correct: false },
-            { text: 'concat()', corect: true },
+            { text: 'concat()', correct: true },
             { text: 'merge', correct: false },
             { text: 'join()', correct: false },
         ]
@@ -171,7 +171,7 @@ let questions = [
         question: "How to return a number as a String?",
         answers: [
             { text: 'valueOf()', correct: false },
-            { text: 'concat()', corect: false },
+            { text: 'concat()', correct: false },
             { text: 'toString()', correct: true },
             { text: 'String()', correct: false },
         ]
@@ -180,7 +180,7 @@ let questions = [
         question: "How to get current date and time ?",
         answers: [
             { text: 'date new()', correct: false },
-            { text: 'new Date()', corect: true },
+            { text: 'new Date()', correct: true },
             { text: 'Date()', correct: false },
             { text: 'date()', correct: false },
         ]
@@ -224,7 +224,6 @@ displayQuestion();
 */
 function displayQuestion() {
     resetStatus();
-    console.log("inside display question");
 
 
     let currentQuestion = questions[currentQuestionNumber];
@@ -276,8 +275,13 @@ function checkAnswer(e) {
     console.log(selectedButton);
     const correctAnswer = selectedButton.dataset.correct === "true";
     if (correctAnswer) {
+        /*
+        setTimeout(()={selectedButton.classList.add("correct");
+                            score++;
+        },1000)*/
         selectedButton.classList.add("correct");
         score++;
+
     }
     else {
         selectedButton.classList.add("incorrect");
@@ -305,6 +309,7 @@ function displayScore() {
     resetStatus();
     document.getElementById("progressDone").style.width = "100%";
     document.getElementById("progressDone").innerHTML = "100%";
+    document.getElementById("back-btn").textContent = "Exit";
     question.textContent = `You Scored ${score} out of ${questions.length} !!!!`;
     nextButton.style.display = "inline-block";
     nextButton.textContent = "Start Again";
@@ -356,7 +361,5 @@ function progressBar() {
     progressBar.style.width = `${((progress / finalValue) * 100)}%`;
     progressBar.innerHTML = `${(Math.round((progress / finalValue) * 100))}%`;
 
-    console.log(finalValue + " finalvalue");
-    console.log(progress + " question number");
-    console.log(progressBar.style.width + "width of proges bar");
+
 }
