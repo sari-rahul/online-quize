@@ -94,7 +94,98 @@ let questions = [
             { text: 'onmouseclick', correct: false },
             { text: 'onclick', correct: true },
         ]
-    }
+    },
+    {
+        question: 'console.log(typeof NaN); will result in..',
+        answers: [
+            { text: 'number', correct: true },
+            { text: 'NaN', corect: false },
+            { text: 'undefined', correct: false },
+            { text: 'null', correct: false },
+        ]
+    },
+    {
+        question: 'console.log(typeof typeof 1); will result in..',
+        answers: [
+            { text: 'number', correct: false },
+            { text: 'string', corect: true },
+            { text: '1', correct: false },
+            { text: 'true', correct: false },
+        ]
+    },
+    {
+        question: 'console.log(false == "0"); will result in..',
+        answers: [
+            { text: 'false', correct: false },
+            { text: 'true', corect: true },
+            { text: 'Nan', correct: false },
+            { text: 'none of the above', correct: false },
+        ]
+    },
+    {
+        question: "console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());); will result in..",
+        answers: [
+            { text: 'baaa', correct: false },
+            { text: 'banana', corect: true },
+            { text: 'Banana', correct: false },
+            { text: 'Baaa', correct: false },
+        ]
+    },
+    {
+        question: "console.log(3 > 2 > 1); will result in..",
+        answers: [
+            { text: 'true', correct: false },
+            { text: 'NaN', corect: false },
+            { text: 'false', correct: true },
+            { text: 'None of above', correct: false },
+        ]
+    },
+    {
+        question: "console.log(1+'2'+'2'); will result in..",
+        answers: [
+            { text: '24', correct: false },
+            { text: '32', corect: false },
+            { text: '14', correct: false },
+            { text: '122', correct: true },
+        ]
+    },
+    {
+        question: "How does the while loop begins ?",
+        answers: [
+            { text: 'while(i<10)', correct: true },
+            { text: 'while i<10', corect: false },
+            { text: 'while {i<10}', correct: false },
+            { text: 'all of the above', correct: true },
+        ]
+    },
+    {
+        question: "Two arrays can be merged using which method ?",
+        answers: [
+            { text: 'cancate()', correct: false },
+            { text: 'concat()', corect: true },
+            { text: 'merge', correct: false },
+            { text: 'join()', correct: false },
+        ]
+    },
+    {
+        question: "How to return a number as a String?",
+        answers: [
+            { text: 'valueOf()', correct: false },
+            { text: 'concat()', corect: false },
+            { text: 'toString()', correct: true },
+            { text: 'String()', correct: false },
+        ]
+    },
+    {
+        question: "How to get current date and time ?",
+        answers: [
+            { text: 'date new()', correct: false },
+            { text: 'new Date()', corect: true },
+            { text: 'Date()', correct: false },
+            { text: 'date()', correct: false },
+        ]
+    },
+
 
 ];
 
@@ -263,7 +354,7 @@ function progressBar() {
     let finalValue = questions.length;
 
     progressBar.style.width = `${((progress / finalValue) * 100)}%`;
-    progressBar.innerHTML = `${((progress / finalValue) * 100)}%`;
+    progressBar.innerHTML = `${(Math.round((progress / finalValue) * 100))}%`;
 
     console.log(finalValue + " finalvalue");
     console.log(progress + " question number");
