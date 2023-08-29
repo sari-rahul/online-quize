@@ -1,7 +1,7 @@
 # Javascript Quiz
 
 JavaScript Quiz is an online quiz based on basics of javascript.
-![am i responsive image]()
+![am i responsive image](assets/images/amiresponsivequiz.png)
 
 ## DEMO
 ---
@@ -133,8 +133,8 @@ If the game is to be continued by another user they can click the login button a
 
 This project has been tested throughly using the dev tools during the development process and has behaved accordingly in all required screen sizes. After completion it has been tested in lighthouse and has a good score for accessibilty, performance,SEO and Best practices.
 
-- [Lighthouse test of landing page.]()
-- [Lighthouse test of quiz page.]()
+- [Lighthouse test of landing page.](assets/images/lighthouseforlandingpage.png)
+- [Lighthouse test of quiz page.](assets/images/lighthouseforquizpage.png)
 
 
 ### Full Testing
@@ -161,15 +161,19 @@ Each device tested the site using the following browsers:
 
 #### HTML
 
-No errors have been found while passing through official [W3C Validator]().
+No errors have been found while passing through official [W3C Validator.](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsari-rahul.github.io%2Fonline-quize%2F)
 
 #### CSS
 
-No errors have been found while pasing through official [Jigsaw validator.]()
+- No errors have been found while passing through official [jigaw validator.](https://jigsaw.w3.org/css-validator/validator?uri=+https%3A%2F%2Fsari-rahul.github.io%2Fonline-quize%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
 
 #### Javascript
 
-No errors have been found while pasing through official [Jshint validator.]()
+No errors have been found while passing through official Jshint validator.
++ [Jshint validator page1.](assets/images/jshintpage1.png)
++ [Jshint validator page2.](assets/images/jshintpage2.png)
+
 
 ### Manual Testing
 
@@ -177,6 +181,25 @@ No errors have been found while pasing through official [Jshint validator.]()
 
 | Feature               | Expected Outcome                                                                                                             | Testing Performed    | Result                           | Pass/Fail |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------------------------------- | --------- |
+| `Landing page Form`              |
+|Login Button |Asks to enter name and email address to start the game and displays the lets start button|Clicked the button after entering the name and email address|Lets start button displayed|Pass|
+|`Quiz Page`|
+|Progress Bar|At base position with 0% written and increases as the users goes through the quiz by clicking next button|Next button clicked|Increses the width|Pass|
+|Question container|Should display each question and its number when the next button is clicked|Clicked next button|Displayed a different question and its number|Pass|
+|`Answer Container`|
+|Answer buttons|Should display differnt options as per the question when the next button is clicked|Next button clicked|Displays the options of next question|Pass|
+|Answer button Hover|They should show blue borders when hovered|Hovered|Blue border appeared|Pass|
+|Answer Button Background|the background of the answer button clicked should turn green if the clicked answer is true |Clicked the correct answer.|The background turned green|Pass|
+|Answer Button Background|the background of the answer button clicked should turn red if the clicked answer is false and the write answers button turns green. |Clicked the wrong answer.|The background of the clicked button turned red and that of correct answer turned green.|Pass|
+|Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
+|Next Button|When clicked should display the next question as well as the coressponding answer buttons.|Clicked the next button.|The next question and the respective answer button displayed.|Pass|
+|`Score Page`|
+|Progress Bar|Should show 100%.|completed the quiz.|Shows 100%|Pass.|
+|Score Bar|Should show the score of the user.|Completed the quiz.|Shows the score.|Pass|
+|Feedback Area|Should display with a submit button once the quiz is completed|Quiz completed|It appears along with the submit button|Pass||Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
+Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
+|Start Again Button|When clicked should display the questions as well as the coressponding answer buttons again.|Clicked the next button.|The next question and the respective answer button displayed.|Pass|
+
 
 
 
@@ -202,8 +225,8 @@ The credits of this projects are:
 
 ### Content
 
-- The content and concept of this project was refferd from the Cake styling and Cakes Berlin websites.They are bakers based in Stuttgart and Berlin respectively.
+- The content of this project was refferd from W3Schools websites.
 
-- The instructions for implementation was taken from the [Debug Media](https://www.youtube.com/watch?v=uhWvXeCEbHw) youtube channel.
++ The instructions for implementation was taken from the [Great Stack](https://www.youtube.com/watch?v=PBcqGxrr9g8&t=11s&ab_channel=GreatStack)  youtube channel.
 
   

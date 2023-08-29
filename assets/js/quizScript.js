@@ -110,7 +110,6 @@ const nextButton = document.getElementById("next-btn");
 
 /*The question number and score is set to zero. */
 let currentQuestionNumber = 0;
-let questionNumber = currentQuestionNumber + 1;
 let score = 0;
 
 
