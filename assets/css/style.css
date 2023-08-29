@@ -118,8 +118,6 @@ label {
     border-radius: 10px;
     height: 100%;
     width: 0;
-    transition: 1sec ease .3sec;
-
 }
 
 #question-container {
