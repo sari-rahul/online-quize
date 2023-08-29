@@ -16,7 +16,7 @@
 
 /* sets the background image*/
 body {
-    background-image: url(../images/3193458.jpg);
+    background-image: url(../images/background-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -29,9 +29,7 @@ body {
 header {
     height: 30%;
     width: 100%;
-    font-size: 5rem;
     text-align: center;
-    padding: 5%;
 }
 
 #intro {
@@ -250,17 +248,19 @@ label {
 
 @media (min-width:320px) {
     header {
-        width: 100%;
-        font-size: 2rem;
-        padding: 0px;
+        width: 100vw;
         padding-top: 10%;
+    }
+
+    h1 {
+        font-size: 6rem;
     }
 
     #intro {
         font-size: 2.5rem;
         padding: 0;
         padding-top: 10%;
-
+        padding-bottom: 10%;
     }
 
     #start-btn {
@@ -294,7 +294,7 @@ label {
     }
 
     #next-btn {
-        width: 25%;
+        width: 30%;
         height: 35px;
         margin-top: 15%;
 
@@ -303,7 +303,7 @@ label {
 
     #back-btn {
 
-        width: 25%;
+        width: 30%;
         height: 35px;
         margin-top: 15%;
 
@@ -414,6 +414,7 @@ label {
         height: 65px;
         font-size: 2.5rem;
         margin-top: 5%;
+        margin-bottom: 0px;
         display: none;
     }
 
