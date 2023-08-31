@@ -210,7 +210,7 @@ let score = 0;
 function startQuiz() {
     document.getElementById("progressDone").style.width = "0%";
     document.getElementById("progressDone").innerHTML = "0%";
-
+    document.getElementById("back-btn").textContent = "Login Page";
 
     currentQuestionNumber = 0;
     score = 0;
