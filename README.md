@@ -203,6 +203,11 @@ Login button|When clicked should take to the landing page and allow the user to 
 
 ## BUGS
 ---
+|No. |Bug seen          |Correction done   |Pass/Fail
+|-------| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
+|1.|Display of the lets start button was not clear,It was appearing and then suddenly disappearing|At first both html pages were linked to same script page,Later it was separated and both pages were linked to seperate script pages|Pass|
+|2.|Progress bar was showing decimal values|Added Math.round() to get the rounded values|Pass|
+|3.| 
 
 
 ## DEPLOYMENT
