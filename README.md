@@ -231,7 +231,7 @@ The credits of this projects are:
 
 ### Content
 
-- The content of this project was refferd from W3Schools websites.
+- The content of this project was referred from W3Schools websites.
 
 + The instructions for implementation was taken from the [Great Stack](https://www.youtube.com/watch?v=PBcqGxrr9g8&t=11s&ab_channel=GreatStack)  youtube channel.
 
