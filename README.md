@@ -30,8 +30,8 @@ The login page has a form in it which the user uses to fill in the details. The 
 ![The login form](assets/images/quizloginform.png)
 #### Lets Start Button
 ---
-Once the user submits thte form, a button appears below the form which helps to start the quiz.
-Once the user clicks this button the quiz starts by displaying the first question
+Once the user submits the form, a button appears below the form which helps to start the quiz.
+Once the user clicks this button the quiz starts by displaying the first question.
 ![Lets start button](assets/images/quizletsstartbutton.png)
 
 ### 2.Quiz Page
@@ -47,13 +47,13 @@ It has five parts.
 
 #### Progress Bar
 ---
-It shows the users progress in the quiz.It is at the 0% position in the beginning and increases once the user clicks the next button and gets the next question.
-It also displays the percentage of complation inside it.
+It shows the user's progress in the quiz.It is at the 0% position in the beginning and increases once the user clicks the next button and gets the next question.
+It also displays the percentage of completion inside it.
 ![progress bar](assets/images/progressbar.png)
 
 #### Question Container
 ---
-The most imaportant part of the quiz is the quiz container. It displays the question to the user one by one when the user clicks the next question button.
+The most important part of the quiz is the quiz container. It displays the question to the user one by one when the user clicks the next question button.
 ![Question container](assets/images/questioncontainer.png)
 
 #### Answer Container
@@ -82,8 +82,8 @@ This button when clicked takes the user to the login page or the initial page. T
 It appears on the screen till the user completes the quiz and disappears when the score is displayed.
 ##### Next Question button
 ---
-This button when clicked by the user the next question is displayed.
-It appears till the last question and one the not present on the score displaying page.
+This button when clicked by the user, the next question is displayed.
+It appears till the last question and is not present on the score displaying page.
 
 ### 3. Score Page
 ---
@@ -91,7 +91,7 @@ Once the user completes the quiz the score page is displayed. The features of Sc
 + Progrees Bar
 + The Score bar
 + The Feedback area
-+ StartAgain button
++ Start Again button
 + Exit Button
 
 ![Score Page](assets/images/scorepage.png)
@@ -103,7 +103,7 @@ As the user has completed quiz the progress bar shows 100%.
 
 #### The Score bar
 ---
-The Score bar diaplays the score of the user out of the totoal number of questions in the quiz.
+The Score bar diaplays the score of the user out of the total number of questions in the quiz.
 ![score bar](assets/images/scorebar.png)
 
 
@@ -188,17 +188,17 @@ No errors have been found while passing through official Jshint validator.
 |Progress Bar|At base position with 0% written and increases as the users goes through the quiz by clicking next button|Next button clicked|Increses the width|Pass|
 |Question container|Should display each question and its number when the next button is clicked|Clicked next button|Displayed a different question and its number|Pass|
 |`Answer Container`|
-|Answer buttons|Should display differnt options as per the question when the next button is clicked|Next button clicked|Displays the options of next question|Pass|
+|Answer buttons|Should display different options as per the question when the next button is clicked|Next button clicked|Displays the options of next question|Pass|
 |Answer button Hover|They should show blue borders when hovered|Hovered|Blue border appeared|Pass|
 |Answer Button Background|the background of the answer button clicked should turn green if the clicked answer is true |Clicked the correct answer.|The background turned green|Pass|
-|Answer Button Background|the background of the answer button clicked should turn red if the clicked answer is false and the write answers button turns green. |Clicked the wrong answer.|The background of the clicked button turned red and that of correct answer turned green.|Pass|
+|Answer Button Background|the background of the answer button clicked should turn red if the clicked answer is false and the right answers button turns green. |Clicked the wrong answer.|The background of the clicked button turned red and that of correct answer turned green.|Pass|
 |Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
-|Next Button|When clicked should display the next question as well as the coressponding answer buttons.|Clicked the next button.|The next question and the respective answer button displayed.|Pass|
+|Next Button|When clicked should display the next question as well as the corresponding answer buttons.|Clicked the next button.|The next question and the respective answer button displayed.|Pass|
 |`Score Page`|
 |Progress Bar|Should show 100%.|completed the quiz.|Shows 100%|Pass.|
 |Score Bar|Should show the score of the user.|Completed the quiz.|Shows the score.|Pass|
 |Feedback Area|Should display with a submit button once the quiz is completed|Quiz completed|It appears along with the submit button|Pass||Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
-Login button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
+|Exit button|When clicked should take to the landing page and allow the user to reenter the name and email address.|Clicked the button.|The landing page opened.|Pass|
 |Start Again Button|When clicked should display the questions as well as the coressponding answer buttons again.|Clicked the next button.|The next question and the respective answer button displayed.|Pass|
 
 ## BUGS
