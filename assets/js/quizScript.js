@@ -275,10 +275,7 @@ function checkAnswer(e) {
     console.log(selectedButton);
     const correctAnswer = selectedButton.dataset.correct === "true";
     if (correctAnswer) {
-        /*
-        setTimeout(()={selectedButton.classList.add("correct");
-                            score++;
-        },1000)*/
+
         selectedButton.classList.add("correct");
         score++;
 
