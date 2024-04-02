@@ -5,7 +5,7 @@ JavaScript Quiz is an online quiz based on basics of javascript.
 
 ## DEMO
 ---
-A live demo of the site can be found [here.](https://sari-rahul.github.io/online-quiz/)
+A live demo of the site can be found [here.](https://sari-rahul.github.io/online-quize/)
 
 ## LANGUAGES USED
 
@@ -221,7 +221,7 @@ The steps of deployment are as follows:
 - In pages ,change the Branch into main and Save it.
 - Wait for few minutes and the link to the repository will be loaded above.
 
-The live link can be found [here.](https://sari-rahul.github.io/online-quiz/)
+The live link can be found [here.](https://sari-rahul.github.io/online-quize/)
 
 ## CREDITS
 
